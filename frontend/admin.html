@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель Администратора</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .logout-btn { background: #dc3545; padding: 5px 10px; color: white; text-decoration: none; border-radius: 4px; font-size: 14px; }
+        .app-card { border: 1px solid #333; padding: 12px; border-radius: 5px; margin-bottom: 15px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .app-card p { margin-bottom: 5px; font-size: 14px; }
+        .status-select { padding: 5px; border-radius: 4px; margin-right: 10px; border: 1px solid #ccc; }
+        .update-btn { background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; }
+        .filter-group { margin-bottom: 20px; background: #f8f9fa; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="form-container">
+            <div class="header">
+                <h3>Панель Админа</h3>
+                <a href="#" id="logoutAdminBtn" class="logout-btn">Выйти</a>
+            </div>
+
+            <div class="filter-group">
+                <label for="statusFilter" style="font-size: 14px; font-weight: bold;">Фильтр заявок:</label>
+                <select id="statusFilter" style="width: 100%; padding: 8px; margin-top: 5px;">
+                    <option value="Все">Все заявки</option>
+                    <option value="Новая">Новая</option>
+                    <option value="Идет обучение">Идет обучение</option>
+                    <option value="Обучение завершено">Обучение завершено</option>
+                </select>
+            </div>
+
+            <div id="adminAppsList">
+                <p>Загрузка данных...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

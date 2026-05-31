@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Вход - Корочки.есть</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="app-container">
+            <div class="form-container" style="margin-top: 50px;">
+                <h2>Авторизация</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="logLogin">Логин</label>
+                        <input type="text" id="logLogin" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="logPassword">Пароль</label>
+                        <input type="password" id="logPassword" required>
+                    </div>
+
+                    <div class="error-text" id="loginError" style="text-align: center; font-size: 14px; margin-bottom: 10px;"></div>
+
+                    <button type="submit" class="btn-primary">Войти</button>
+                </form>
+
+                <a href="register.html" class="link-text">Еще не зарегистрированы? Регистрация</a>
+            </div>
+        </div>
+
+        <script src="js/app.js"></script>
+    </body>
+</html>

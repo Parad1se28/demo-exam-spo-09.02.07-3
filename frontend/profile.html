@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - Корочки.есть</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Стили специфичные для профиля и слайдера */
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .logout-btn { background: #dc3545; padding: 5px 10px; color: white; text-decoration: none; border-radius: 4px; font-size: 14px; }
+        
+        /* Слайдер */
+        .slider-container { width: 100%; height: 150px; position: relative; overflow: hidden; border-radius: 8px; margin-bottom: 20px; }
+        .slide { width: 100%; height: 100%; position: absolute; opacity: 0; transition: opacity 0.5s ease-in-out; background-color: #ddd; display: flex; justify-content: center; align-items: center; font-size: 20px; color: #555; }
+        .slide.active { opacity: 1; }
+        .slider-controls { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); }
+        .slider-controls button { background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; }
+        
+        /* Карточки заявок */
+        .app-card { border: 1px solid #ccc; padding: 10px; border-radius: 5px; margin-bottom: 10px; background: #fafafa; }
+        .status-badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+        .status-new { background: #ffeeba; color: #856404; }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="form-container">
+            <div class="header">
+                <h3 id="welcomeText">Привет, студент!</h3>
+                <a href="#" id="logoutBtn" class="logout-btn">Выйти</a>
+            </div>
+
+            <div class="slider-container">
+                <div class="slide active">Картинка 1 (Реклама курса)</div>
+                <div class="slide">Картинка 2 (Скидки)</div>
+                <div class="slide">Картинка 3 (Преподаватели)</div>
+                <div class="slide">Картинка 4 (Отзывы)</div>
+                
+                <div class="slider-controls">
+                    <button id="prevSlide">&#10094;</button>
+                    <button id="nextSlide">&#10095;</button>
+                </div>
+            </div>
+
+            <hr style="margin-bottom: 15px;">
+
+            <h4>Оставить заявку</h4>
+            <form id="appForm">
+                <div class="input-group">
+                    <label for="courseSelect">Выберите курс</label>
+                    <select id="courseSelect" required style="width: 100%; padding: 10px; border-radius: 5px;">
+                        <option value="1">Основы алгоритмизации и программирования</option>
+                        <option value="2">Основы веб-дизайна</option>
+                        <option value="3">Основы проектирования баз данных</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="startDate">Дата начала (ДД.ММ.ГГГГ)</label>
+                    <input type="text" id="startDate" placeholder="15.09.2026" required>
+                    <span class="error-text" id="errDate">Формат: ДД.ММ.ГГГГ</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="paymentMethod">Способ оплаты</label>
+                    <select id="paymentMethod" required style="width: 100%; padding: 10px; border-radius: 5px;">
+                        <option value="Наличными">Наличными</option>
+                        <option value="Перевод по телефону">Перевод по номеру телефона</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-primary">Отправить заявку</button>
+            </form>
+
+            <h4 style="margin-top: 25px; margin-bottom: 10px;">Мои заявки</h4>
+            <div id="applicationsList">
+                <p style="font-size: 14px; color: #777;">Загрузка заявок...</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
